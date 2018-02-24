@@ -39,7 +39,7 @@ class AddProducts extends React.Component{
 
 
  handleSubmit=values=>{
-     console.log(values)
+     console.log('values', values)
     this.props.addProducts(values)
  }
 

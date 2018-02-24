@@ -14,25 +14,29 @@ const config = {
 };
 const firebaseApp = firebase.initializeApp(config);
 const productDatabase=firebase.database().ref('products');
-const productImageStorage = firebase.storage().ref('productImage')
+const productImageStorage = firebase.storage().ref('products')
 
 export function addProducts(values){
     console.log('action values', values)
     const {product, category, price, amount, image}=values;
+    const id=`${new Date().getTime()}`
     return dispatch=>{
-        productImageStorage.child('images').put(image[0])
+        productImageStorage.child(`images/${id}`).put(image[0])
         .then(snapshot=>{
-            productDatabase.push({product, category, price, amount, image: snapshot.metadata.downloadURLs[0]});
+            productDatabase.push({id, product, category, price, amount, image: snapshot.metadata.downloadURLs[0]
+            })
+        })
             dispatch({
                 type: ADD_PRODUCT,
                 payload: values
-            })
+            
         })
     }
-}
-export function displayProducts(){
+};
+export function fetchProducts(){
     return dispatch=>{
         productDatabase.on('value', snapshot=>{
+            console.log ('snapshot', snapshot)
             dispatch({
                 type: DISPLAY_PRODUCTS,
                 payload: snapshot.val()

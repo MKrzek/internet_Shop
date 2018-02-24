@@ -1,8 +1,8 @@
 import React from 'react';
 import ImagePreview from './ImagePreview.js';
 export default class FileField extends React.Component{
-    constructor(props){
-        super(props);
+    constructor(state){
+        super(state);
         this.state={
            image: 'Please attach an image',
            imageUrl: null,
@@ -16,14 +16,14 @@ export default class FileField extends React.Component{
                 image: file,
                 imageUrl: reader.result
             })
-            console.log('image url', this.state.imageUrl)
+            
         }
         reader.readAsDataURL(file)
     }
     render(){
         const {input} =this.props;
         console.log('filefield input', this.props.input)
-        console.log ('files',this.props)
+        console.log ('this.props.',this.props)
 
         delete input.value
         return <div>
