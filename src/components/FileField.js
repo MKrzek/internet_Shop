@@ -24,7 +24,7 @@ export default class FileField extends React.Component{
         const {input} =this.props;
         delete input.value
         return <div>
-                <div>
+                <div className='mt-3 mb-5'>
                 <input
                  type='file'
                  className='form-control'
@@ -34,4 +34,4 @@ export default class FileField extends React.Component{
                  <ImagePreview imageUrl={this.state.imageUrl} image={this.state.image}/>
                </div>
     }
-}
+} 
