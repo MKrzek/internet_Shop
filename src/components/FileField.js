@@ -22,6 +22,9 @@ export default class FileField extends React.Component{
     }
     render(){
         const {input} =this.props;
+        console.log('filefield input', this.props.input)
+        console.log ('files',this.props)
+
         delete input.value
         return <div>
                 <div className='mt-3 mb-5'>

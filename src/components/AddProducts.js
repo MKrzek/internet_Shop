@@ -39,6 +39,7 @@ class AddProducts extends React.Component{
 
 
  handleSubmit=values=>{
+     console.log(values)
     this.props.addProducts(values)
  }
 
@@ -68,7 +69,7 @@ class AddProducts extends React.Component{
                    type='text'
                    component={this.renderField}/>
                    <Field
-                   name='picture'
+                   name='image'
                    label='Add product image'
                    type='file'
                    component={FileField}
