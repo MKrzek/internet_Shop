@@ -11,12 +11,7 @@ class Card extends React.Component{
     }
    
   renderCardItem=()=>{
-      let amount=0
       return this.props.products.map(product=>{
-          console.log('quantity', product.quantity)
-          console.log('price', product.price)
-          amount = amount + (Number(product.price)*Number(product.quantity))
-          console.log('amount', amount)
            return <CardItem key={product.key} product={product} deleteFromCard={this.deleteFromCard}/> 
       })
   }
@@ -34,9 +29,14 @@ class Card extends React.Component{
 
     render(){
         const amount=this.calculateAmount()
+        const finalAmount=amount.reduce((prev,curr)=>{
+            return prev + curr
+        },0)
+        console.log('finalAmount', finalAmount)
+
         return <div>
                   <h4>{this.props.cardContentLength}</h4>
-                  <h4>{amount}</h4>
+                  <h4>{finalAmount}</h4>
                    {this.renderCardItem()} 
                </div>
     }
