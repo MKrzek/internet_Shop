@@ -3,6 +3,7 @@ import * as firebase from 'firebase';
 import {ADD_PRODUCT} from '../constants.js';
 import {DISPLAY_PRODUCTS} from '../constants.js';
 import {UPDATE_QUANTITY} from '../constants.js';
+import {ADD_TO_CARD} from '../constants.js';
 
 const config = {
   apiKey: "AIzaSyCstCGXYbPPdKFgtQxibfKgJMuTw2i6cJ8",
@@ -53,5 +54,16 @@ export function updateQuantity(newQuantity, key){
             type: UPDATE_QUANTITY,
             payload: newQuantity
         })
+    }
+}
+
+export function addToCard(product){
+    return dispatch=>{
+        dispatch({
+            type: ADD_TO_CARD,
+            payload: product
+        })
+
+
     }
 }

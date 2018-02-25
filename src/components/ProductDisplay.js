@@ -17,7 +17,7 @@ class ProductDisplay extends React.Component {
       }
       
      return _.map(this.props.products, product=>{
-         console.log('product', product)
+         
          return  <Product key={product.key} product={product}/>
              })
      
@@ -32,7 +32,7 @@ class ProductDisplay extends React.Component {
   }
 }
 function mapStateToProps(state){
-    console.log('state', state.displayProducts)
+    
     return {products: state.displayProducts}
 }
 export default connect (mapStateToProps, Actions) (ProductDisplay)
