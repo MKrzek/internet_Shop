@@ -39,6 +39,7 @@ class Product extends React.Component {
       const product={...this.props.product, quantity}
       console.log (product)
     this.props.addToCard(product)
+    
   };
 
   render() {

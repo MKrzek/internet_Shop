@@ -6,6 +6,7 @@ import {UPDATE_QUANTITY} from '../constants.js';
 import {ADD_TO_CARD} from '../constants.js';
 import {DELETE_FROM_CARD} from '../constants.js';
 
+
 const config = {
   apiKey: "AIzaSyCstCGXYbPPdKFgtQxibfKgJMuTw2i6cJ8",
   authDomain: "veggy-shop.firebaseapp.com",
@@ -60,6 +61,7 @@ export function updateQuantity(newQuantity, key){
 
 export function addToCard(product){
     return dispatch=>{
+      
         dispatch({
             type: ADD_TO_CARD,
             payload: product
@@ -69,9 +71,11 @@ export function addToCard(product){
 
 export function deleteFromCard(key){
     return dispatch=>{
+        
         dispatch({
             type: DELETE_FROM_CARD,
             payload: key
         })
     }
 }
+

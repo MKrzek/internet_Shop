@@ -11,6 +11,7 @@ const rootReducer=combineReducers({
     addProducts: AddProducts,
     displayProducts: DisplayProducts,
     cardProducts: AddToCard,
+  
 
 })
 export default rootReducer
