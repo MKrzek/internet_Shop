@@ -4,6 +4,7 @@ import {ADD_PRODUCT} from '../constants.js';
 import {DISPLAY_PRODUCTS} from '../constants.js';
 import {UPDATE_QUANTITY} from '../constants.js';
 import {ADD_TO_CARD} from '../constants.js';
+import {DELETE_FROM_CARD} from '../constants.js';
 
 const config = {
   apiKey: "AIzaSyCstCGXYbPPdKFgtQxibfKgJMuTw2i6cJ8",
@@ -18,7 +19,7 @@ const productDatabase=firebase.database().ref('products');
 const productImageStorage = firebase.storage().ref('products')
 
 export function addProducts(values){
-    console.log('action values', values)
+    
     const {product, category, price, amount, image}=values;
     const id=`${new Date().getTime()}`
     return dispatch=>{
@@ -37,7 +38,7 @@ export function addProducts(values){
 export function fetchProducts(){
     return dispatch=>{
         productDatabase.on('value', snapshot=>{
-            console.log ('snapshot', snapshot)
+           
             dispatch({
                 type: DISPLAY_PRODUCTS,
                 payload: snapshot.val()
@@ -63,7 +64,14 @@ export function addToCard(product){
             type: ADD_TO_CARD,
             payload: product
         })
+    }
+}
 
-
+export function deleteFromCard(key){
+    return dispatch=>{
+        dispatch({
+            type: DELETE_FROM_CARD,
+            payload: key
+        })
     }
 }
