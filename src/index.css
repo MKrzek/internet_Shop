@@ -3,6 +3,16 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.searchBar{
+  width: 90%;
+  padding-top: 2vh;
+  
+  
+}
 
 
 
+.nav-pills{
+  margin-bottom: 65px;
+  border-bottom: 1px solid grey
+}

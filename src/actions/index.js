@@ -40,7 +40,6 @@ export function addProducts(values){
 export function fetchProducts(){
     return dispatch=>{
         productDatabase.on('value', snapshot=>{
-           
             dispatch({
                 type: DISPLAY_PRODUCTS,
                 payload: snapshot.val()
@@ -62,7 +61,6 @@ export function updateStock(newStock, key){
 
 export function addToCard(product){
     return dispatch=>{
-      
         dispatch({
             type: ADD_TO_CARD,
             payload: product
@@ -80,7 +78,6 @@ export function deleteFromCard(key){
 }
 export function updateProductQuantity(item, update){
     const updateInfo={key: item.key, quantity:update}
-    
     return dispatch=>{ 
         dispatch({
             type: UPDATE_PRODUCT_QUANTITY,
