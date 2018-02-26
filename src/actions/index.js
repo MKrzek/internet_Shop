@@ -1,10 +1,11 @@
 import * as firebase from 'firebase';
 
-import {ADD_PRODUCT} from '../constants.js';
+import {ADD_PRODUCT, UPDATE_PRODUCT_QUANTITY} from '../constants.js';
 import {DISPLAY_PRODUCTS} from '../constants.js';
-import {UPDATE_QUANTITY} from '../constants.js';
+import {UPDATE_STOCK} from '../constants.js';
 import {ADD_TO_CARD} from '../constants.js';
 import {DELETE_FROM_CARD} from '../constants.js';
+export {UPDATE_PRODUCT_QUANTITY} from '../constants.js';
 
 
 const config = {
@@ -47,14 +48,14 @@ export function fetchProducts(){
         })
     }
 }
-export function updateQuantity(newQuantity, key){
+export function updateStock(newStock, key){
     return dispatch=>{
         productDatabase.child(key).update({
-            amount: newQuantity
+            amount: newStock
         });
         dispatch({
-            type: UPDATE_QUANTITY,
-            payload: newQuantity
+            type: UPDATE_STOCK,
+            payload: newStock
         })
     }
 }
@@ -70,11 +71,24 @@ export function addToCard(product){
 }
 
 export function deleteFromCard(key){
-    return dispatch=>{
-        
+    return dispatch=>{ 
         dispatch({
             type: DELETE_FROM_CARD,
             payload: key
+        })
+    }
+}
+export function updateProductQuantity(item, update){
+    console.log('action update quantity', update)
+    console.log('image', item.image)
+    const {product, key, category, price, amount, image, quantity, id} = item
+    console.log('action item', item)
+    const updatedProduct ={ key, image, id, product, category, price, amount, quantity: Number(update)}
+    console.log('updatedProduct', updatedProduct)
+    return dispatch=>{ 
+        dispatch({
+            type: UPDATE_PRODUCT_QUANTITY,
+            payload: updatedProduct
         })
     }
 }

@@ -19,8 +19,6 @@ class Card extends React.Component{
   calculateAmount=()=>{
       let amount = 0;
       return this.props.products.map(product => {
-        console.log("quantity", product.quantity);
-        console.log("price", product.price);
         return amount = amount + Number(product.price) * Number(product.quantity);
         
       });
@@ -28,6 +26,7 @@ class Card extends React.Component{
   
 
     render(){
+        const cardContentLength= this.props.products.length
         const amount=this.calculateAmount()
         const finalAmount=amount.reduce((prev,curr)=>{
             return prev + curr
@@ -35,18 +34,18 @@ class Card extends React.Component{
         console.log('finalAmount', finalAmount)
 
         return <div>
-                  <h4>{this.props.cardContentLength}</h4>
+                  <h4>{cardContentLength}</h4>
                   <h4>{finalAmount}</h4>
                    {this.renderCardItem()} 
                </div>
     }
 }
 function mapStateToProps(state){
-    
+    console.log('state products', state.cardProducts)
     return{
         products: state.cardProducts,
-        cardContentLength: state.cardProducts.length,
-        finalAmount: state.finalAmount
+        
+        
         
     }
 }

@@ -1,6 +1,8 @@
 import React from "react";
+import {connect} from 'react-redux';
+import * as Actions from '../actions/index.js';
 
-export default class CardItem extends React.Component {
+class CardItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = { quantity: this.props.product.quantity };
@@ -12,6 +14,9 @@ export default class CardItem extends React.Component {
       this.setState({ disabledAdd: true });
     }
     this.setState({ quantity: quantity });
+    console.log('state quantity', this.state.quantity)
+   this.props.updateProductQuantity(this.props.product, this.state.quantity+1)
+   
   };
 
   deductQuantity = () => {
@@ -63,3 +68,4 @@ export default class CardItem extends React.Component {
     );
   }
 }
+export default connect(null, Actions)(CardItem);
