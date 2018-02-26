@@ -14,7 +14,7 @@ class CardItem extends React.Component {
       this.setState({ disabledAdd: true });
     }
     this.setState({ quantity: quantity });
-    console.log('state quantity', this.state.quantity)
+    
    this.props.updateProductQuantity(this.props.product, this.state.quantity+1)
    
   };
@@ -25,17 +25,18 @@ class CardItem extends React.Component {
       this.setState({ disabledDeduct: true });
     }
     this.setState({ quantity: quantity });
+    this.props.updateProductQuantity(this.props.product, this.state.quantity -1);
   };
+
 
   handleClick=()=>{
       const key=this.props.product.key
-      console.log('key', key)
-      console.log('delete works')
+      
       this.props.deleteFromCard(key)
   }
 
   render() {
-    const { image, product, amount, price, quantity } = this.props.product;
+    const { image, product, price} = this.props.product;
     return (
       <div>
         <div className="card col-md-3 mb-4 mr-2 ml-2">

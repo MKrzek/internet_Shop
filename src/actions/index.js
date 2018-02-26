@@ -79,16 +79,12 @@ export function deleteFromCard(key){
     }
 }
 export function updateProductQuantity(item, update){
-    console.log('action update quantity', update)
-    console.log('image', item.image)
-    const {product, key, category, price, amount, image, quantity, id} = item
-    console.log('action item', item)
-    const updatedProduct ={ key, image, id, product, category, price, amount, quantity: Number(update)}
-    console.log('updatedProduct', updatedProduct)
+    const updateInfo={key: item.key, quantity:update}
+    
     return dispatch=>{ 
         dispatch({
             type: UPDATE_PRODUCT_QUANTITY,
-            payload: updatedProduct
+            payload: updateInfo
         })
     }
 }
