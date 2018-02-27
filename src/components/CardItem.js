@@ -44,7 +44,7 @@ class CardItem extends React.Component {
             src={image}
             alt="food"
             style={{ height: "10vh", width: "12vw" }}
-            className="mx-auto pt-5"
+            className=" mx-auto pt-5"
           />
           <h3 className="text-center  ml-3 mr-3 mt-3">{product}</h3>
           <h4 className="text-center">{price}€</h4>

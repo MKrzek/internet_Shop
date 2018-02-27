@@ -33,8 +33,8 @@ class Card extends React.Component{
         },0)
         
 
-        return <div className='row pr-5'>
-            <div className='pr-5 pl-2 pt-3 col-s-2'>
+        return <div className='row'>
+            <div className='pr-5 pt-3 col-s-2'>
             <p>No.of items : {cardContentLength}</p>
             <p>Sub Total : {finalAmount}</p>
             </div>

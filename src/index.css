@@ -4,16 +4,12 @@ body {
   font-family: sans-serif;
   
 }
-.searchBar{
-  /* width: 90%; */
-  padding-top: 2vh;
-  padding-right: 2vw; 
-}
+
 .searchInput{
-  width: 10vw
+  width: 31vw
 }
 .nav-pills{
-  margin-bottom: 65px;
+ 
   border-bottom: 1px solid grey;
   position:fixed;
   width: 100%;
@@ -22,4 +18,56 @@ body {
 }
 .mainPart{
   margin-top:150px;
+}
+.icon{
+  font-size: 2.5em;
+}
+
+@media(max-width: 576px){
+  .productImage{
+    height :28vh;
+    width:55vw
+  }
+}
+@media(min-width:577px){
+.productImage{
+  height: 18vh;
+  width:28vw
+}
+}
+@media(min-width:990px){
+  .productImage{
+    height: 15vh;
+    width: 20vw;
+  }
+}
+@media(min-width:1050px){
+ .productImage{
+   height: 18vh;
+   width: 18vw;
+ }
+}
+@media(min-width:1440px){
+  .productImage{
+    height: 22vh;
+    width: 17vw;
+  }
+}
+@media(min-width: 1560px){
+  .productImage{
+    height: 19vh;
+    width: 14vw;
+  }
+}
+@media(min-width: 1850px){
+  .productImage{
+    height: 17vh;
+    width: 13vw;
+  }
+}
+@media(min-width: 2000px){
+  .productImage{
+    height: 12vh;
+    width: 10vw;
+  }
 }

@@ -9,7 +9,7 @@ class SearchBar extends React.Component{
          return <fieldset className={` form-group${touched && error ? "has-error" : ""}`}>
              <div className="form-inline my-2 my-lg-0">
                <div>
-                 <input {...input} type={type} placeholder={label} className="searchInput form-control mr-lg-2   text-lowercase" />
+                 <input {...input} type={type} placeholder={label} className="searchInput  mr-lg-2   text-lowercase" />
 
                  <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
                    search

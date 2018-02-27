@@ -46,12 +46,12 @@ class Product extends React.Component {
     const { image, product, amount, price } = this.props.product;
 
     return (
-      <div className="card col-lg-3 col-md-4 col-sm-5 mb-4 mr-2 ml-2">
+      <div className="card col-lg-3 col-md-5 col-sm-5 mb-4 mr-2 ml-2">
         <img
           src={image}
           alt="food"
-          style={{ height: "20vh", width: "17vw" }}
-          className="mx-auto pt-5"
+          //style={{ height: "20vh", width: "17vw" }}
+          className="productImage mx-auto pt-5"
         />
         <h3 className="text-center  ml-3 mr-3 mt-3">{product}</h3>
         <h4 className="text-center">{price}€</h4>
