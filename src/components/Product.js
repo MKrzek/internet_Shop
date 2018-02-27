@@ -34,11 +34,11 @@ class Product extends React.Component {
     });
   };
 
-  addToCard = () => {
+  addToCart = () => {
       const quantity=this.state.quantity
       const product={...this.props.product, quantity}
       console.log (product)
-    this.props.addToCard(product)
+    this.props.addToCart(product)
     
   };
 
@@ -69,8 +69,8 @@ class Product extends React.Component {
             disabled={this.state.disabledDeduct}
             onClick={this.deductQuantity}>-</button>
         </div>
-        <button onClick={this.addToCard} className="btn btn-info mb-4 mt-2">
-          Add to card
+        <button onClick={this.addToCart} className="btn btn-outline-success mb-4 mt-2">
+          Add to cart
         </button>
       </div>
     );

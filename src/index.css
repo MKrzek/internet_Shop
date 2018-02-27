@@ -21,12 +21,28 @@ body {
 }
 .icon{
   font-size: 2.5em;
+  color: green;
 }
-
-@media(max-width: 576px){
+.fa-shopping-card{
+  color: green;
+}
+@media(max-width: 400px){
+ .productImage{
+   height: 28vh;
+   width: 58vw;
+ }
+}
+@media(min-width: 401px){
   .productImage{
-    height :28vh;
-    width:55vw
+    height :25vh;
+    width:30vw
+  }
+  .nav-pills{
+
+  }
+  .icon{
+    font-size:1.5em;
+    
   }
 }
 @media(min-width:577px){
@@ -70,4 +86,17 @@ body {
     height: 12vh;
     width: 10vw;
   }
+}
+.cartDeleteButton{
+  position:absolute;
+  right:5px;
+  top:8px;
+}
+.cartQuantityButtons{
+  position: absolute;
+  right: 81px;
+  padding-left: 20px;
+}
+.cartProductPrice{
+  margin-right:10px;
 }

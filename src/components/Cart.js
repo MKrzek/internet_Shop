@@ -1,18 +1,18 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import * as Actions from '../actions/index.js';
-import CardItem from './CardItem.js';
+import CartItem from './CartItem.js';
 
-class Card extends React.Component{
+class Cart extends React.Component{
     
     
-    deleteFromCard=(key)=>{
-        this.props.deleteFromCard(key)
+    deleteFromCart=(key)=>{
+        this.props.deleteFromCart(key)
     }
    
-  renderCardItem=()=>{
+  renderCartItem=()=>{
       return this.props.products.map(product=>{
-           return <CardItem key={product.key} product={product} deleteFromCard={this.deleteFromCard}/> 
+           return <CartItem key={product.key} product={product} deleteFromCart={this.deleteFromCart}/> 
       })
   }
  
@@ -26,7 +26,7 @@ class Card extends React.Component{
   
 
     render(){
-        const cardContentLength= this.props.products.length
+        const cartContentLength= this.props.products.length
         const amount=this.calculateAmount()
         const finalAmount=amount.reduce((prev,curr)=>{
             return prev + curr
@@ -34,24 +34,26 @@ class Card extends React.Component{
         
 
         return <div className='row'>
-            <div className='pr-5 pt-3 col-s-2'>
-            <p>No.of items : {cardContentLength}</p>
+            <div className='pr-4 pt-3 col-s-2'>
+            <p>No.of items : {cartContentLength}</p>
             <p>Sub Total : {finalAmount}</p>
             </div>
             <div className='col-s-2'>
             <i className="fa fa-shopping-cart fa-4x pt-4"></i>
             </div>
-            {this.renderCardItem()}
+            <div className='card col-lg-12'>
+            {this.renderCartItem()}
+            </div>
           </div>;
     }
 }
 function mapStateToProps(state){
-    console.log('state products', state.cardProducts)
+    console.log('state products', state.cartProducts)
     return{
-        products: state.cardProducts,
+        products: state.cartProducts,
         
         
         
     }
 }
-export default connect(mapStateToProps, Actions)(Card);
+export default connect(mapStateToProps, Actions)(Cart);

@@ -3,8 +3,8 @@ import * as firebase from 'firebase';
 import {ADD_PRODUCT, UPDATE_PRODUCT_QUANTITY} from '../constants.js';
 import {DISPLAY_PRODUCTS} from '../constants.js';
 import {UPDATE_STOCK} from '../constants.js';
-import {ADD_TO_CARD} from '../constants.js';
-import {DELETE_FROM_CARD} from '../constants.js';
+import {ADD_TO_CART} from '../constants.js';
+import {DELETE_FROM_CART} from '../constants.js';
 export {UPDATE_PRODUCT_QUANTITY} from '../constants.js';
 
 
@@ -59,19 +59,19 @@ export function updateStock(newStock, key){
     }
 }
 
-export function addToCard(product){
+export function addToCart(product){
     return dispatch=>{
         dispatch({
-            type: ADD_TO_CARD,
+            type: ADD_TO_CART,
             payload: product
         })
     }
 }
 
-export function deleteFromCard(key){
+export function deleteFromCart(key){
     return dispatch=>{ 
         dispatch({
-            type: DELETE_FROM_CARD,
+            type: DELETE_FROM_CART,
             payload: key
         })
     }
