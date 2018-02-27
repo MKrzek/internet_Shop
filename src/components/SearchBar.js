@@ -7,24 +7,22 @@ class SearchBar extends React.Component{
      renderField=field=>{
          const {input, type, label, meta:{error, touched}} = field
          return <fieldset className={` form-group${touched && error ? "has-error" : ""}`}>
-        <div className='searchBar'>
-          <div className='searchInput'>
-            <input
-              {...input}
-              type={type}
-              placeholder={label}
-              className=" form-control text-lowercase"
-            />
-            <button type="submit" className="btn bmd-btn-icon">
-              <i className="material-icons">search</i>
-            </button>
-          </div>
-          <div>
-            {touched &&
-              error && <div className="alert alert-danger">{error} </div>}
-          </div>
-        </div>
-        </fieldset>
+             <div className="form-inline my-2 my-lg-0">
+               <div>
+                 <input {...input} type={type} placeholder={label} className="searchInput form-control mr-lg-2   text-lowercase" />
+
+                 <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+                   search
+                 </button>
+               </div>
+               <div>
+                 {touched &&
+                   error && (
+                     <div className="alert alert-danger">{error} </div>
+                   )}
+               </div>
+             </div>
+           </fieldset>;
      }
      handleSubmit=(values)=>{
          this.props.performSearch(values)

@@ -6,14 +6,12 @@ import  Card from './Card.js';
 import Navigation from './Navigation.js';
 class App extends Component {
   render() {
-    return (
-        
-        <div className="App">
+    return ( <div>
          <Navigation/>
-       
+        <div className='mainPart'>
         {/* <AddProducts/> */}
         <ProductDisplay/>
-
+         </div>
 
         
       </div>

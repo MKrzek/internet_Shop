@@ -2,17 +2,24 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  
 }
 .searchBar{
-  width: 90%;
+  /* width: 90%; */
   padding-top: 2vh;
-  
-  
+  padding-right: 2vw; 
 }
-
-
-
+.searchInput{
+  width: 10vw
+}
 .nav-pills{
   margin-bottom: 65px;
-  border-bottom: 1px solid grey
+  border-bottom: 1px solid grey;
+  position:fixed;
+  width: 100%;
+  top:0;
+  background-color: white;
+}
+.mainPart{
+  margin-top:150px;
 }

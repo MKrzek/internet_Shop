@@ -25,7 +25,7 @@ class ProductDisplay extends React.Component {
 
   render() {
     return <div className='container'>
-            <div className='row justify-content-center'>
+            <div className='justify-content-center row'>
              {this.displayProducts()}
              </div>
            </div>

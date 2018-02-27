@@ -33,11 +33,16 @@ class Card extends React.Component{
         },0)
         
 
-        return <div>
-                  <h4>{cardContentLength}</h4>
-                  <h4>{finalAmount}</h4>
-                   {this.renderCardItem()} 
-               </div>
+        return <div className='row pr-5'>
+            <div className='pr-5 pl-2 pt-3 col-s-2'>
+            <p>No.of items : {cardContentLength}</p>
+            <p>Sub Total : {finalAmount}</p>
+            </div>
+            <div className='col-s-2'>
+            <i className="fa fa-shopping-cart fa-4x pt-4"></i>
+            </div>
+            {this.renderCardItem()}
+          </div>;
     }
 }
 function mapStateToProps(state){
