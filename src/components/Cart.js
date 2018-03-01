@@ -4,6 +4,12 @@ import * as Actions from '../actions/index.js';
 import CartItem from './CartItem.js';
 
 class Cart extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            renderCartContent: false,
+        }
+    }
     
     
     deleteFromCart=(key)=>{
@@ -23,6 +29,18 @@ class Cart extends React.Component{
         
       });
   }
+
+  showCartContent=()=>{
+      if (this.state.renderCartContent){
+          this.setState({
+              renderCartContent: false
+          })
+      }else{
+     this.setState({
+        renderCartContent: true
+    })
+  }
+}
   
 
     render(){
@@ -38,13 +56,14 @@ class Cart extends React.Component{
             <p>No.of items : {cartContentLength}</p>
             <p>Sub Total : {finalAmount}</p>
             </div>
-            <div className='col-s-2'>
+            <div onClick={this.showCartContent} className='col-s-2'>
             <i className="fa fa-shopping-cart fa-4x pt-4"></i>
             </div>
-            <div className='card col-lg-12'>
+            {this.state.renderCartContent ? (<div className='card col-lg-12 cartContent'>
             {this.renderCartItem()}
-            </div>
-          </div>;
+            {this.props.products.length>0 ? (<button className='btn btn-warning'>Proceed to Checkouts</button>) : null}
+            </div>) : null}
+          </div>
     }
 }
 function mapStateToProps(state){

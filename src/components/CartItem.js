@@ -56,7 +56,7 @@ class CartItem extends React.Component {
               -
             </button>
           </div>
-          <button className=" btn btn-outline-warning cartDeleteButton" onClick={this.handleClick}>
+          <button className="btn cartDeleteButton" onClick={this.handleClick}>
             X
           </button>
         </div>

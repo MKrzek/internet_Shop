@@ -87,16 +87,28 @@ body {
     width: 10vw;
   }
 }
-.cartDeleteButton{
+button.cartDeleteButton{
   position:absolute;
   right:5px;
   top:8px;
+  background-color: red;
+  color: white;
+  border: 1px red
 }
 .cartQuantityButtons{
   position: absolute;
   right: 81px;
   padding-left: 20px;
+  
 }
 .cartProductPrice{
   margin-right:10px;
+}
+.cartQuantityButtons>button:first-of-type{
+  background-color: green;
+  color: white;
+}
+.cartQuantityButtons>button:last-of-type{
+  background-color: green;
+  color: white;
 }
