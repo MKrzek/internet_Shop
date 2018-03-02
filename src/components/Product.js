@@ -41,6 +41,9 @@ class Product extends React.Component {
     this.props.addToCart(product)
     
   };
+  handleClick=()=>{
+    this.props.openModal(this.props.product)
+  }
 
   render() {
     const { image, product, amount, price } = this.props.product;
@@ -52,6 +55,7 @@ class Product extends React.Component {
           alt="food"
           //style={{ height: "20vh", width: "17vw" }}
           className="productImage mx-auto pt-5"
+          onClick={this.handleClick}
         />
         <h3 className="text-center  ml-3 mr-3 mt-3">{product}</h3>
         <h4 className="text-center">{price}€</h4>

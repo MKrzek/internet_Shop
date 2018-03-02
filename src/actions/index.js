@@ -7,6 +7,7 @@ import {ADD_TO_CART} from '../constants.js';
 import {DELETE_FROM_CART} from '../constants.js';
 import {UPDATE_PRODUCT_QUANTITY} from '../constants.js';
 import  {SEARCH_PRODUCTS} from '../constants.js';
+import {OPEN_MODAL, CLOSE_MODAL} from '../constants.js';
 
 const config = {
   apiKey: "AIzaSyCstCGXYbPPdKFgtQxibfKgJMuTw2i6cJ8",
@@ -99,5 +100,20 @@ export function searchProducts(product){
        })
 
    }
+}
+export function openModal (product){
+    return dispatch=>{
+        dispatch({
+            type:OPEN_MODAL,
+            payload: product
+        })
+    }
+}
+export function closeModal(){
+    return dispatch=>{
+        dispatch({
+            type: CLOSE_MODAL
+        })
+    }
 }
 
