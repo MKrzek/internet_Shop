@@ -112,3 +112,14 @@ button.cartDeleteButton{
   background-color: green;
   color: white;
 }
+.cartContent{
+  padding-top: 20px;
+  width: 50%;
+  position: fixed;
+  top: 113px;
+  right: 0px;
+  
+
+
+
+}
