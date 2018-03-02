@@ -9,7 +9,7 @@ class SearchBar extends React.Component{
          return <fieldset className={` form-group${touched && error ? "has-error" : ""}`}>
              <div className="form-inline my-2 my-lg-0">
                <div>
-                 <input {...input} type={type} placeholder={label} className="searchInput  mr-lg-2   text-lowercase" />
+                 <input {...input} type={type} placeholder={label} className="searchInput mr-lg-2   text-capitalize" />
 
                  <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
                    search
@@ -25,7 +25,10 @@ class SearchBar extends React.Component{
            </fieldset>;
      }
      handleSubmit=(values)=>{
-         this.props.performSearch(values)
+         console.log('values', values)
+        let product = values.query.charAt(0).toUpperCase()+values.query.slice(1);
+         this.props.searchProducts(product)
+         values.query='';
      }
      
     render(){

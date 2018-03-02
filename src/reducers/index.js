@@ -6,11 +6,13 @@ import DisplayProducts from './reducer_displayProducts.js';
 import AddToCart from './reducer_addToCart.js';
 
 
+
 const rootReducer=combineReducers({
     form: FormReducer,
     addProducts: AddProducts,
     displayProducts: DisplayProducts,
     cartProducts: AddToCart,
+   
   
 
 })

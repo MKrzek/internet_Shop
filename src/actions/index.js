@@ -1,12 +1,12 @@
 import * as firebase from 'firebase';
 
-import {ADD_PRODUCT, UPDATE_PRODUCT_QUANTITY} from '../constants.js';
+import {ADD_PRODUCT} from '../constants.js';
 import {DISPLAY_PRODUCTS} from '../constants.js';
 import {UPDATE_STOCK} from '../constants.js';
 import {ADD_TO_CART} from '../constants.js';
 import {DELETE_FROM_CART} from '../constants.js';
-export {UPDATE_PRODUCT_QUANTITY} from '../constants.js';
-
+import {UPDATE_PRODUCT_QUANTITY} from '../constants.js';
+import  {SEARCH_PRODUCTS} from '../constants.js';
 
 const config = {
   apiKey: "AIzaSyCstCGXYbPPdKFgtQxibfKgJMuTw2i6cJ8",
@@ -84,5 +84,20 @@ export function updateProductQuantity(item, update){
             payload: updateInfo
         })
     }
+}
+export function searchProducts(product){
+   
+    console.log('product', product)
+   return dispatch=>{
+       productDatabase.orderByChild("product").equalTo(product).on("value", snapshot=>{
+           
+           console.log ('payload', snapshot.val())
+           dispatch({
+               type: SEARCH_PRODUCTS,
+               payload: snapshot.val()
+           })
+       })
+
+   }
 }
 

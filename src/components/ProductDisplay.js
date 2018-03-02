@@ -33,6 +33,8 @@ class ProductDisplay extends React.Component {
 }
 function mapStateToProps(state){
     
-    return {products: state.displayProducts}
+    return {products: state.displayProducts,
+           
+    }
 }
 export default connect (mapStateToProps, Actions) (ProductDisplay)

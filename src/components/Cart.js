@@ -59,7 +59,7 @@ class Cart extends React.Component{
             <div onClick={this.showCartContent} className='col-s-2'>
             <i className="fa fa-shopping-cart fa-4x pt-4"></i>
             </div>
-            {this.state.renderCartContent ? (<div className='card col-lg-12 cartContent'>
+            {this.state.renderCartContent ? (<div className='card col-lg-12 cartContent pb-4'>
             {this.renderCartItem()}
             {this.props.products.length>0 ? (<button className='btn btn-warning'>Proceed to Checkouts</button>) : null}
             </div>) : null}
