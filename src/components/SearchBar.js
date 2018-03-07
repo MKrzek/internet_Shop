@@ -6,6 +6,7 @@ import * as Actions from '../actions/index.js';
 class SearchBar extends React.Component{
      renderField=field=>{
          const {input, type, label, meta:{error, touched}} = field
+         console.log('input', input.value)
          return <fieldset className={` form-group${touched && error ? "has-error" : ""}`}>
              <div className="form-inline my-2 my-lg-0">
                <div>
@@ -25,13 +26,16 @@ class SearchBar extends React.Component{
            </fieldset>;
      }
      handleSubmit=(values)=>{
-         console.log('values', values)
-        let product = values.query.charAt(0).toUpperCase()+values.query.slice(1);
+         
+         const query=values.query
+         console.log("values", query);
+        let product = query.charAt(0).toUpperCase() + query.slice(1);
          this.props.searchProducts(product)
          values.query='';
      }
      
     render(){
+        
         return <form onSubmit={this.props.handleSubmit(this.handleSubmit)}>
                 <Field
                   name='query'

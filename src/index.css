@@ -60,13 +60,13 @@ body {
 }
 @media(min-width:1050px){
  .productImage{
-   height: 18vh;
+   height: 21vh;
    width: 18vw;
  }
 }
 @media(min-width:1440px){
   .productImage{
-    height: 22vh;
+    height: 18vh;
     width: 17vw;
   }
 }
@@ -119,8 +119,5 @@ button.cartDeleteButton{
   position: fixed;
   top: 113px;
   right: 0px;
-  
-
-
 
 }

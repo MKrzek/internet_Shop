@@ -19,7 +19,7 @@ export default class ProductModal extends React.Component {
         },
         content: {
           position: "absolute",
-          top: "40px",
+          top: "90px",
           left: "40px",
           right: "40px",
           bottom: "40px",
@@ -32,30 +32,21 @@ export default class ProductModal extends React.Component {
           padding: "10px"
         }
       };
-      return (
-        <Modal
-          isOpen={this.props.modalIsOpen}
-          onRequestClose={() => this.props.onRequestClose()}
-          ariaHideApp={false}
-          style={customStyle}
-        >
+      return <Modal isOpen={this.props.modalIsOpen} onRequestClose={() => this.props.onRequestClose()} ariaHideApp={false} style={customStyle}>
           <div className="photo-modal">
-            <div>
+            <div className="modalImage text-center pt-5 pb-5">
               <ImagePreview imageUrl={image} alt={product} />
             </div>
-            <div>{product}</div>
+            <div className="text-center">{product}</div>
+            <div className="text-center">{price}€</div>
             <div className="text-center mt-1">
-              <button
-                className="btn btn-primary mb-2"
-                onClick={() => this.props.onRequestClose()}
-              >
+              <button className="btn btn-primary mb-2" onClick={() => this.props.onRequestClose()}>
                 close
               </button>
             </div>
             <div />
           </div>
-        </Modal>
-      );
+        </Modal>;
     }
   }
 }
